@@ -1,3 +1,48 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <h1>PIPES</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Variable</th>
+        <th>Pipe</th>
+        <th>Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>{{nombre}}</th>
+        <th>uppercase</th>
+        <th>{{nombre | uppercase}}</th>
+      </tr>
+      <tr>
+        <th>{{nombre}}</th>
+        <th>lowercase</th>
+        <th>{{nombre | lowercase}}</th>
+      </tr>
+      <tr>
+        <th>{{nombre}}</th>
+        <th>slice:3</th>
+        <th>{{nombre | slice:3}}</th><!--Lo que quiere decir el parametro es cuantas letras se quiere cortar-->
+      </tr>
+      <tr>
+        <th>{{nombre}}</th>
+        <th>slice:0:3</th>
+        <th>{{nombre | slice:0:3}}</th><!--se puede indicar el principio y el fin-->
+      </tr>
+      <tr>
+        <th>{{arreglo}}</th>
+        <th>slice:1:5</th>
+        <th>{{arreglo | slice:1:5}}</th><!--tambien funciona con objetos y arreglos-->
+      </tr>
+      <tr>
+        <th>{{PI}}</th>
+        <th>number</th>
+        <th>{{60000000.2 | number:'.0-2'}}</th><!--Se le pasa un string que referencia como primer vaor el número de enteros minimos y luego el minimo y el maximo de los decimales-->
+      </tr>
+    </tbody>
+  </table>
+  <h4>Slice</h4>
+  <ul>
+    <li *ngFor="let item of arreglo | slice:5:20">{{item}}</li> <!--Puede ser tambien aplicado a un *ngFor para filtrar la vista-->
+  </ul>
+</div>
