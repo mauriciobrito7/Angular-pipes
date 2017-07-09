@@ -39,10 +39,29 @@
         <th>number</th>
         <th>{{60000000.2 | number:'.0-2'}}</th><!--Se le pasa un string que referencia como primer vaor el número de enteros minimos y luego el minimo y el maximo de los decimales-->
       </tr>
+      <tr>
+        <th>{{a}}</th>
+        <th>percent</th>
+        <th>{{a | percent}}</th><!--De la misma forma que en el pipeDecimal se le puede pasar valores en el que se indiquen los decimales-->
+      </tr>
+      <tr>
+        <th>{{salario}}</th>
+        <th>currency</th>
+        <th>{{salario | currency:'VEF':true}}</th><!--Por defecto muestra la moneda en usd pero se le puede pasar por parametro el tipo de moneda, por ISO 4217 podemos buscar los códigos-->
+      </tr>
+      <tr>
+        <th>{{valorDePromesa}}</th>
+        <th>async</th>
+        <th>{{valorDePromesa | async}}</th>
+      </tr>
     </tbody>
   </table>
   <h4>Slice</h4>
   <ul>
     <li *ngFor="let item of arreglo | slice:5:20">{{item}}</li> <!--Puede ser tambien aplicado a un *ngFor para filtrar la vista-->
   </ul>
+  <h4>JSON</h4>
+  <pre>
+    {{heroe | json}}
+  </pre> 
 </div>
